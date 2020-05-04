@@ -3,8 +3,10 @@ const fs = require('fs');
 const db = require('../db/db.json');
 
 module.exports = (app) => {
+
     app.get('/api/notes', (req, res) => {
         console.log('Notes: ', db);
+
         fs.readFile('db/db.json', (err, data) => {
             if (err) throw err;
             res.json(JSON.parse(data));
@@ -13,31 +15,32 @@ module.exports = (app) => {
 
     app.post('/api/notes', (req, res) => {
         const userNote = req.body;
-        allNotes = notes.length;
-        userNote.id = String(notes.length+1);
-        notes.push(userNote);
-        writeJSONFile(notes);
+        allNotes = db.length;
+        userNote.id = String(db.length + 1);
+        db.push(userNote);
+        writeJSONFile(db);
         res.json(true);
     })
 
     app.delete('/api/notes/:id', (req, res) => {
-        let noteID = req.params.id;
-        if (notes.length <= 1){
-            notes.pop();
+        var noteID = req.params.id;
+        if (db.length <= 1){
+            db.pop();
         }else{
-            notes.splice(noteID - 1, 1);
-            notes.forEach(newID);
+            db.splice(noteID - 1, 1);
+            db.forEach(newID);
         }
         function newID(item, index){
             item.id = index + 1;
         }
-        writeJSONFile(notes);
+        writeJSONFile(db);
         res.json(true);
     })
 
-    function writeJSONFile(notes){
-        fs.writeFile('db/db.json', JSON.stringify(notes), (err) => {
+    function writeJSONFile(db){
+        fs.writeFile('db/db.json', JSON.stringify(db), (err) => {
             if (err) throw err;
+            console.log('Note taken!');
         });
     }
 }
