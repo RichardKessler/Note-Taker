@@ -20,7 +20,7 @@ module.exports = (app) => {
         res.json(true);
     })
 
-    app.delete('/api/notes', (req, res) => {
+    app.delete('/api/notes/:id', (req, res) => {
         let noteID = req.params.id;
         if (notes.length <= 1){
             notes.pop();
