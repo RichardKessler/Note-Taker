@@ -34,3 +34,18 @@ Then click on the `Get Started` button.
 This application allows users to write, save, and delete notes.  When the user starts the program they can click on the pencil icon to start making a new note.  The user needs to enter a Title and the note itself.  Once those fields have input a save button then displays for them to save the note.  Once saved the note will display on the left of the screen.  They can delete their notes from the saved display by hitting the trashcan icon.
 
 ## Built With
+
+* HTML5
+* CSS3
+* Javascript
+* Node.js
+* [Express](https://www.npmjs.com/package/express)
+* ES6
+* [Shields.io](https://shields.io/)
+* Visual Studio Code
+
+## License
+
+MIT
+
+## 
