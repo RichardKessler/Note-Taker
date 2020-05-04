@@ -5,8 +5,6 @@ const db = require('../db/db.json');
 module.exports = (app) => {
 
     app.get('/api/notes', (req, res) => {
-        console.log('Notes: ', db);
-
         fs.readFile('db/db.json', (err, data) => {
             if (err) throw err;
             res.json(JSON.parse(data));
@@ -38,9 +36,8 @@ module.exports = (app) => {
     })
 
     function writeJSONFile(db){
-        fs.writeFile('db/db.json', JSON.stringify(db), (err) => {
+        fs.writeFile('db/db.json', JSON.stringify(db), function(err) {
             if (err) throw err;
-            console.log('Note taken!');
         });
     }
 }
