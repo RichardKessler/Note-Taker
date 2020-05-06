@@ -13,7 +13,7 @@ An application that allows you to input, save, and delete notes
 * [Description](#Description)
 * [Built With](#Built-With)
 * [License](#License)
-* [Contributers](#Contributers)
+* [Credits](#Credits)
 * [Author](#Author)
 
 ## User Story
@@ -48,4 +48,10 @@ This application allows users to write, save, and delete notes.  When the user s
 
 MIT
 
-## 
+## Credits
+
+* Eddie Saunders - Troubleshooting
+
+## Author
+
+* Richard Kessler - Full Stack Developer
